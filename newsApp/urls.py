@@ -1,8 +1,6 @@
 from django.urls import path
-from .views import Index, bbc
+from .views import Index
  
 urlpatterns = [
-path('', Index, name = 'Index'),
-path('bbc/', bbc, name = 'BBC')
- 
+path('', Index, name = 'Index')
 ]

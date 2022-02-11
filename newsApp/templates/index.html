@@ -1,40 +1,46 @@
 <!DOCTYPE html>
+<style>
+  h1 {
+    text-align: center;
+    color: black;
+  }
+
+  h3 {
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: 300px;
+  }
+</style>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Aljazera News</title>
- 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
- 
-<div class="jumbotron" style="color:black">
- 
-    <h1 style="color:black">
-        This is the latest news
- 
-    </h1>
- 
-</div>
- 
- 
-<div class="container">
-    {% for new, des, i in mylist %}
-    <img src="{{i}}" alt="">
-    <h3>News:</h3> {{new}}
-    {{value | linebreaks}}
- 
-    <h4>Description:</h4> {{des}}
-    {{value | linebreaks}}
- 
- 
- 
-    {% endfor %}
- 
- 
- 
- 
-</div>
- 
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>World News</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="title" style="font-family: Times New Roman">
+      <h1>Recent News</h1>
+    </div>
+
+    <div class="container">
+      {% for news, des, i, link in mylist %}
+      <h3>
+        {{news}} {{value | linebreaks}}
+        <a href="{{link}}">
+          <img src="{{i}}" alt="" width="50%" height="50%" />
+        </a>
+      </h3>
+
+      <description style="font-family: Times New Roman; font-size: 22px"
+        >{{des}} {{value | linebreaks}} {% endfor %}</description
+      >
+    </div>
+  </body>
 </html>
