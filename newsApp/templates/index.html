@@ -24,6 +24,7 @@
       crossorigin="anonymous"
     />
   </head>
+
   <body>
     <div class="title" style="font-family: Times New Roman">
       <h1>Recent News</h1>
@@ -33,12 +34,13 @@
       {% for news, des, i, link in mylist %}
       <h3>
         {{news}} {{value | linebreaks}}
+
         <a href="{{link}}">
-          <img src="{{i}}" alt="" width="50%" height="50%" />
+          <img src="{{i}}" alt="" width="80%" height="50%" />
         </a>
       </h3>
 
-      <description style="font-family: Times New Roman; font-size: 22px"
+      <description style="font-family: Times New Roman; font-size: 20px"
         >{{des}} {{value | linebreaks}} {% endfor %}</description
       >
     </div>
