@@ -4,7 +4,7 @@ from newsapi import NewsApiClient
 
 # SPORTS
 def Index(request):
-    newsapi = NewsApiClient(api_key="52bf227da152410f9d1ad5ef014b27f3")
+    newsapi = NewsApiClient(api_key="a749583ea8a0483d94f5eb4770cc65ce")
 
     sports_headlines = newsapi.get_everything(
         q='sports', domains='espn.com', language='en', sort_by='relevancy', page_size=5)
@@ -71,3 +71,11 @@ def Index(request):
     science_news, science_desc, science_img, science_link)
 
     return render(request, 'index.html', context={"all_list": all_list})
+
+
+
+
+
+
+
+
