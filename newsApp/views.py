@@ -4,10 +4,10 @@ from newsapi import NewsApiClient
 
 # HOME
 def Index(request):
-    newsapi = NewsApiClient(api_key="a749583ea8a0483d94f5eb4770cc65ce")
+    newsapi = NewsApiClient(api_key="edf912e806f04213b4f39a3306163433")
 
     sports_headlines = newsapi.get_everything(
-        q='sports', domains='deadspin.com', language='en', sort_by='relevancy', page_size=5)
+        q='sports', domains='espn.com', language='en', sort_by='relevancy', page_size=5)
     business_headlines = newsapi.get_everything(
         q='business', domains='forbes.com', language='en', sort_by='relevancy', page_size=5)
     tech_headlines = newsapi.get_everything(
@@ -75,7 +75,7 @@ def Index(request):
 
 # SPORTS
 def Sports(request):
-    newsapi = NewsApiClient(api_key="a749583ea8a0483d94f5eb4770cc65ce")
+    newsapi = NewsApiClient(api_key="edf912e806f04213b4f39a3306163433")
     
     sports1_headline = newsapi.get_everything(
     q='sports', domains='espn.com', language='en', sort_by='relevancy', page_size=5)
@@ -136,6 +136,5 @@ def Sports(request):
             sports4_img.append(sports4_myarticles['urlToImage'])
             sports4_link.append(sports4_myarticles['url'])
             
-    sports_list = zip(sports1_news, sports1_desc, sports1_img,sports1_link, sports2_news, sports2_desc, sports2_img,sports2_link,sports3_news, sports3_desc, sports3_img,sports3_link, sports4_news, sports4_desc, sports4_img,sports4_link)
-
+    sports_list = zip(sports1_news, sports1_desc, sports1_img,sports1_link, sports2_news, sports2_desc, sports2_img,sports2_link,sports3_news, sports3_desc, sports3_img,sports3_link, sports4_news, sports4_desc, sports4_img, sports4_link)
     return render(request, 'sports.html', context={"sports_list": sports_list})
