@@ -1,0 +1,75 @@
+{% extends "newsApp/base.html" %}
+
+{% block sitetitle %}Entertainment{% endblock %}
+
+{% block title %}Entertainment{% endblock %}
+
+{% block content %}
+<div id="fh5co-main">
+    <div class="container">
+        {% for entertainment1_news, entertainment1_desc, entertainment1_i, entertainment1_link, entertainment2_news, entertainment2_desc, entertainment2_i, entertainment2_link, entertainment3_news, entertainment3_desc, entertainment3_i, entertainment3_link, entertainment4_news, entertainment4_desc, entertainment4_i, entertainment4_link in entertainment_list %} <div class="row">
+        <div id="fh5co-board" data-columns>
+            <div class="item">
+                <div class="animate-box">
+                    <a
+                    href="{{entertainment1_link}}"
+                    class="image-popup fh5co-board-img"
+                    title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                    >
+                    <img src="{{entertainment1_i}}" alt="" />
+                    </a>
+                </div>
+                <div class="fh5co-desc">
+                    {{entertainment1_desc}} {{value | linebreaks}}
+                </div>
+                </div>
+
+                <div class="item">
+                    <div class="animate-box">
+                        <a
+                        href="{{entertainment2_link}}"
+                        class="image-popup fh5co-board-img"
+                        title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                        >
+                        <img src="{{entertainment2_i}}" alt="" />
+                        </a>
+                    </div>
+                    <div class="fh5co-desc">
+                        {{entertainment2_desc}} {{value | linebreaks}}
+                    </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="animate-box">
+                            <a
+                            href="{{entertainment3_link}}"
+                            class="image-popup fh5co-board-img"
+                            title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                            >
+                            <img src="{{entertainment3_i}}" alt="" />
+                            </a>
+                        </div>
+                        <div class="fh5co-desc">
+                            {{entertainment3_desc}} {{value | linebreaks}}
+                        </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="animate-box">
+                                <a
+                                href="{{entertainment4_link}}"
+                                class="image-popup fh5co-board-img"
+                                title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                                >
+                                <img src="{{entertainment4_i}}" alt="" />
+                                </a>
+                            </div>
+                            <div class="fh5co-desc">
+                                {{entertainment4_desc}} {{value | linebreaks}} {% endfor %}
+                            </div>
+                            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    {% endblock %}

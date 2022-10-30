@@ -1,13 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    {% block title %}<title>News App</title>{% endblock %}    
+    <title>{% block sitetitle %}News{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>News</title>
-    {% load static %}
 
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content="" />
@@ -46,88 +45,75 @@
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
     <!-- Modernizr JS -->
     <script type="text/javascript" src="{% static '/js/modernizr-2.6.2.min.js' %}"></script>
-  </head>
+</head>
 
-  <body>
-    <div id="fh5co-offcanvass">
-      <a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close"
-        >Menu <i class="icon-cross"></i>
-      </a>
-      <h1 class="fh5co-logo">
-        <a class="navbar-brand" href="index.html">News App</a>
-      </h1>
-      <ul>
-        <li class="active"><a href="index.html">Home</a></li>
+<body>
+<div id="fh5co-offcanvass">
+    <a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close"
+    >Close <i class="icon-cross"></i>
+    </a>
+    <h1 class="fh5co-logo">
+    <a class="navbar-brand" href="./">News</a>
+    </h1>
+    <ul>
+        <!-- <li class="active"><a href="./">Home</a></li> -->
+        <li><a href="{% url 'business' %}">Business</a></li>
+        <li><a href="{% url 'tech' %}">Technology</a></li>
+        <li><a href="{% url 'science' %}">Science</a></li>
         <li><a href="{% url 'sports' %}">Sports</a></li>
-        <li><a href="business.html">Business</a></li>
-        <li><a href="technology.html">Technology</a></li>
-        <li><a href="science.html">Science</a></li>
-      </ul>
-      <h3 class="fh5co-lead">Connect with us</h3>
-      <p class="fh5co-social-icons">
-        <a href="#"><i class="icon-twitter"></i></a>
-        <a href="#"><i class="icon-facebook"></i></a>
-        <a href="#"><i class="icon-instagram"></i></a>
+        <li><a href="{% url 'entertainment' %}">Entertainment</a></li>
+
+    </ul>
+    <h3 class="fh5co-lead">Connect with me</h3>
+    <p class="fh5co-social-icons">
+        <a href="https://www.linkedin.com/in/franklinle/"><i class="icon-linkedin"></i></a>
+        <a href="https://github.com/franklinle"><i class="icon-github"></i></a>
+        <!-- <a href="#"><i class="icon-instagram"></i></a>
         <a href="#"><i class="icon-dribbble"></i></a>
-        <a href="#"><i class="icon-youtube"></i></a>
-      </p>
+        <a href="#"><i class="icon-youtube"></i></a> -->
+    </p>
     </div>
     
     <header id="fh5co-header" role="banner">
-      <div class="container">
+    <div class="container">
         <div class="row">
-          <div class="col-md-12">
+        <div class="col-md-12">
             <a href="#" class="fh5co-menu-btn js-fh5co-menu-btn"
-              >Menu <i class="icon-menu"></i>
+            >Category <i class="icon-menu"></i>
             </a>
-            <a class="navbar-brand" href="#">News</a>
-          </div>
+            <a class="navbar-brand" href="#">{% block title %}NEWS{% endblock %}</a>
         </div>
-      </div>
+        </div>
+    </div>
     </header>
 
     {% block content %}
     <div id="fh5co-main">
-      <div class="container">
+    <div class="container">
         {% for sports_news, sports_desc, sports_i, sports_link, business_news, business_desc, business_i, business_link, tech_news, tech_desc, tech_i, tech_link, science_news, science_desc, science_i, science_link in all_list %}
         <div class="row">
-          <div id="fh5co-board" data-columns>
+        <div id="fh5co-board" data-columns>
             <div class="item">
-              <div class="animate-box">
+            <div class="animate-box">
                 <a
-                  href="{{sports_link}}"
-                  class="image-popup fh5co-board-img"
-                  title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                href="{{business_link}}"
+                class="image-popup fh5co-board-img"
+                title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
                 >
-                  <img src="{{sports_i}}" alt="" />
+                <img src="{{business_i}}" alt="" />
                 </a>
-              </div>
-              <div class="fh5co-desc">
-                {{sports_desc}} {{value | linebreaks}}
-              </div>
             </div>
-
-            <div class="item">
-              <div class="animate-box">
-                <a
-                  href="{{business_link}}"
-                  class="image-popup fh5co-board-img"
-                  title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
-                >
-                  <img src="{{business_i}}" alt="" />
-                </a>
-              </div>
-              <div class="fh5co-desc">
+            <div class="fh5co-desc">
                 {{business_desc}} {{value | linebreaks}}
-              </div>
+            </div>
             </div>
 
             <div class="item">
-              <div class="animate-box">
+            <div class="animate-box">
                 <a
-                  href="{{tech_link}}"
-                  class="image-popup fh5co-board-img"
-                  title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                href="{{tech_link}}"
+                class="image-popup fh5co-board-img"
+                title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
                 >
                   <img src="{{tech_i}}" alt="" />
                 </a>
@@ -148,9 +134,24 @@
                 </a>
               </div>
               <div class="fh5co-desc">
-                {{science_desc}} {{value | linebreaks}} {% endfor %}
+                {{science_desc}} {{value | linebreaks}}
               </div>
             </div>
+
+            <div class="item">
+              <div class="animate-box">
+                  <a
+                  href="{{sports_link}}"
+                  class="image-popup fh5co-board-img"
+                  title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                  >
+                  <img src="{{sports_i}}" alt="" />
+                  </a>
+              </div>
+              <div class="fh5co-desc">
+                  {{sports_desc}} {{value | linebreaks}} {% endfor %}
+              </div>
+              </div>
           </div>
         </div>
       </div>
@@ -162,11 +163,11 @@
       <div class="row row-padded">
         <div class="col-md-12 text-center">
           <p class="fh5co-social-icons">
-            <a href="#"><i class="icon-twitter"></i></a>
-            <a href="#"><i class="icon-facebook"></i></a>
-            <a href="#"><i class="icon-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/franklinle/"><i class="icon-linkedin"></i></a>
+            <a href="https://github.com/franklinle"><i class="icon-github"></i></a>
+            <!-- <a href="#"><i class="icon-instagram"></i></a>
             <a href="#"><i class="icon-dribbble"></i></a>
-            <a href="#"><i class="icon-youtube"></i></a>
+            <a href="#"><i class="icon-youtube"></i></a> -->
           </p>
           <!-- <p><small>&copy; Hydrogen Free HTML5 Template. All Rights Reserved. <br>Designed by: <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> | Images by: <a href="http://pexels.com" target="_blank">Pexels</a> </small></p> -->
         </div>
@@ -174,7 +175,6 @@
     </div>
   </footer>
   
-
   <!-- jQuery -->
   <script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
   <!-- jQuery Easing -->
@@ -189,7 +189,5 @@
   <script type="text/javascript" src="{% static '/js/salvattore.min.js' %}"></script>
   <!-- Main JS -->
   <script type="text/javascript" src="{% static '/js/main.js' %}"></script>
-
-
 </body>
 </html>  

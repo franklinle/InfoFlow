@@ -1,0 +1,75 @@
+{% extends "newsApp/base.html" %}
+
+{% block sitetitle %}Technology{% endblock %}
+
+{% block title %}Technology{% endblock %}
+
+{% block content %}
+<div id="fh5co-main">
+    <div class="container">
+        {% for tech1_news, tech1_desc, tech1_i, tech1_link, tech2_news, tech2_desc, tech2_i, tech2_link, tech3_news, tech3_desc, tech3_i, tech3_link, tech4_news, tech4_desc, tech4_i, tech4_link in tech_list %} <div class="row">
+        <div id="fh5co-board" data-columns>
+            <div class="item">
+                <div class="animate-box">
+                    <a
+                    href="{{tech1_link}}"
+                    class="image-popup fh5co-board-img"
+                    title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                    >
+                    <img src="{{tech1_i}}" alt="" />
+                    </a>
+                </div>
+                <div class="fh5co-desc">
+                    {{tech1_desc}} {{value | linebreaks}}
+                </div>
+                </div>
+
+                <div class="item">
+                    <div class="animate-box">
+                        <a
+                        href="{{tech2_link}}"
+                        class="image-popup fh5co-board-img"
+                        title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                        >
+                        <img src="{{tech2_i}}" alt="" />
+                        </a>
+                    </div>
+                    <div class="fh5co-desc">
+                        {{tech2_desc}} {{value | linebreaks}}
+                    </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="animate-box">
+                            <a
+                            href="{{tech3_link}}"
+                            class="image-popup fh5co-board-img"
+                            title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                            >
+                            <img src="{{tech3_i}}" alt="" />
+                            </a>
+                        </div>
+                        <div class="fh5co-desc">
+                            {{tech3_desc}} {{value | linebreaks}}
+                        </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="animate-box">
+                                <a
+                                href="{{tech4_link}}"
+                                class="image-popup fh5co-board-img"
+                                title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                                >
+                                <img src="{{tech4_i}}" alt="" />
+                                </a>
+                            </div>
+                            <div class="fh5co-desc">
+                                {{tech4_desc}} {{value | linebreaks}} {% endfor %}
+                            </div>
+                            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    {% endblock %}

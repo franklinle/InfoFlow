@@ -1,0 +1,75 @@
+{% extends "newsApp/base.html" %}
+
+{% block sitetitle %}Business{% endblock %}
+
+{% block title %}Business{% endblock %}
+
+{% block content %}
+<div id="fh5co-main">
+    <div class="container">
+        {% for business1_news, business1_desc, business1_i, business1_link, business2_news, business2_desc, business2_i, business2_link, business3_news, business3_desc, business3_i, business3_link, business4_news, business4_desc, business4_i, business4_link in business_list %} <div class="row">
+        <div id="fh5co-board" data-columns>
+            <div class="item">
+                <div class="animate-box">
+                    <a
+                    href="{{business1_link}}"
+                    class="image-popup fh5co-board-img"
+                    title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                    >
+                    <img src="{{business1_i}}" alt="" />
+                    </a>
+                </div>
+                <div class="fh5co-desc">
+                    {{business1_desc}} {{value | linebreaks}}
+                </div>
+                </div>
+
+                <div class="item">
+                    <div class="animate-box">
+                        <a
+                        href="{{business2_link}}"
+                        class="image-popup fh5co-board-img"
+                        title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                        >
+                        <img src="{{business2_i}}" alt="" />
+                        </a>
+                    </div>
+                    <div class="fh5co-desc">
+                        {{business2_desc}} {{value | linebreaks}}
+                    </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="animate-box">
+                            <a
+                            href="{{business3_link}}"
+                            class="image-popup fh5co-board-img"
+                            title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                            >
+                            <img src="{{business3_i}}" alt="" />
+                            </a>
+                        </div>
+                        <div class="fh5co-desc">
+                            {{business3_desc}} {{value | linebreaks}}
+                        </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="animate-box">
+                                <a
+                                href="{{business4_link}}"
+                                class="image-popup fh5co-board-img"
+                                title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"
+                                >
+                                <img src="{{business4_i}}" alt="" />
+                                </a>
+                            </div>
+                            <div class="fh5co-desc">
+                                {{business4_desc}} {{value | linebreaks}} {% endfor %}
+                            </div>
+                            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    {% endblock %}
