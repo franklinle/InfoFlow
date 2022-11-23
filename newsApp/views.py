@@ -4,7 +4,7 @@ from newsapi import NewsApiClient
 
 # HOME
 def Index(request):
-    newsapi = NewsApiClient(api_key="4759079527314c1ca58c7bff696777b0")
+    newsapi = NewsApiClient(api_key="ef60c58133a540d78da1244df634f8f1")
 
     sports_headlines = newsapi.get_everything(
         q='sports', domains='si.com', language='en', sort_by='relevancy', page_size=5)
@@ -75,7 +75,7 @@ def Index(request):
 
 # SPORTS
 def Sports(request):
-    newsapi = NewsApiClient(api_key="4759079527314c1ca58c7bff696777b0")
+    newsapi = NewsApiClient(api_key="ef60c58133a540d78da1244df634f8f1")
     
     sports1_headline = newsapi.get_everything(
     q='sports', domains='espn.com', language='en', sort_by='relevancy', page_size=5)
@@ -141,7 +141,7 @@ def Sports(request):
 
 # BUSINESS
 def Business(request):
-    newsapi = NewsApiClient(api_key="4759079527314c1ca58c7bff696777b0")
+    newsapi = NewsApiClient(api_key="ef60c58133a540d78da1244df634f8f1")
     
     business1_headline = newsapi.get_everything(
     q='business', domains='cnn.com', language='en', sort_by='relevancy', page_size=5)
@@ -207,7 +207,7 @@ def Business(request):
 
 # TECH
 def Tech(request):
-    newsapi = NewsApiClient(api_key="4759079527314c1ca58c7bff696777b0")
+    newsapi = NewsApiClient(api_key="ef60c58133a540d78da1244df634f8f1")
     
     tech1_headline = newsapi.get_everything(
     q='technology', domains='bleepingcomputer.com', language='en', sort_by='relevancy', page_size=5)
@@ -273,7 +273,7 @@ def Tech(request):
 
 # SCIENCE
 def Science(request):
-    newsapi = NewsApiClient(api_key="4759079527314c1ca58c7bff696777b0")
+    newsapi = NewsApiClient(api_key="ef60c58133a540d78da1244df634f8f1")
     
     science1_headline = newsapi.get_everything(
     q='science', domains='atlasobscura.com', language='en', sort_by='relevancy', page_size=5)
@@ -339,7 +339,7 @@ def Science(request):
 
     # ENTERTAINMENT
 def Entertainment(request):
-    newsapi = NewsApiClient(api_key="4759079527314c1ca58c7bff696777b0")
+    newsapi = NewsApiClient(api_key="ef60c58133a540d78da1244df634f8f1")
     
     entertainment1_headline = newsapi.get_everything(
     q='entertainment', domains='avclub.com', language='en', sort_by='relevancy', page_size=5)

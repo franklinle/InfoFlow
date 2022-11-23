@@ -1,10 +1,3 @@
-/*
-   Spezific styling for salvattore
-   Feel free to edit it as you like
-   More info at http://salvattore.com
- */
-
-/* Base styles */
 .column {
     float: left;
 }
@@ -30,7 +23,6 @@
     content: '4 .column.size-1of4';
 }
 
-/* Configurate salvattore with media queries */
 @media screen and (max-width: 450px) {
     #fh5co-board[data-columns]::before {
         content: '1 .column';
