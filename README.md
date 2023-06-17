@@ -1,4 +1,4 @@
-# infoflow
+# InfoFlow
 
 ### Clone the project repository:
 ```
